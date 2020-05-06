@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Submission 3 Github User Apps Final</string>
+    <string name="find_user">Find username …</string>
+
+    <string name="change_language_settings">Change Language Setting</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="not_found">User Not Found</string>
+    <string name="titleSearch">Github User\'s Search App</string>
+    <string name="titleDetail">Detail User</string>
+</resources>
