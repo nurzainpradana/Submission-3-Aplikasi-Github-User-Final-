@@ -37,7 +37,6 @@ public class User implements Parcelable{
     @Expose
     private String name;
 
-
     protected User(Parcel in) {
         login = in.readString();
         avatarUrl = in.readString();
@@ -52,9 +51,6 @@ public class User implements Parcelable{
         this.reposUrl = reposUrl;
         this.followers = followers;
         this.following = following;
-    }
-
-    public User() {
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {

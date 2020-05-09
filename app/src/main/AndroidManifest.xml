@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal">
 
+    <permission android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE" android:protectionLevel="normal"/>
+    <permission android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE" android:protectionLevel="normal"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +16,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.DetailUserActivity"></activity>
+        <provider
+            android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.provider.FavoriteProvider"
+            android:authorities="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE"
+            android:writePermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE" />
+
+        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.DetailUserActivity" />
         <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.SearchUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static android.provider.BaseColumns._ID;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.USERNAME;
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.TABLE_FAVORITE_NAME;
 
 public class FavoriteHelper {
@@ -60,12 +61,12 @@ public class FavoriteHelper {
     }
 
     //Ambil Data dengan ID
-    public Cursor queryById(String id) {
+    public Cursor queryByUsername(String id) {
         return database.query(
                 DATABASE_TABLE,
                 null,
                 _ID + " = ?",
-                new String[] {id},
+                new String[]{id},
                 null,
                 null,
                 null,

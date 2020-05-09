@@ -1,14 +1,24 @@
 package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
@@ -18,18 +28,36 @@ import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.adapter.SectionsPageAdapter;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.Api;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.ApiInterface;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.UserLocal;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.MappingHelper;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.UserViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DetailUserActivity extends AppCompatActivity {
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.CONTENT_URI;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.USERNAME;
+
+public class DetailUserActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvDetailUserName, tvBio, tvFollow;
     CircleImageView ivDetailUserAvatar;
+    Button btnFavorite;
+
+    public static String login = "";
+    public Integer id;
+
+    private final static String addtofavorite = "Add To Favorite";
+    private final static String removefromfavorite = "Remove From Favorite";
 
     public static final String EXTRA_USER = "extra_user";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +68,18 @@ public class DetailUserActivity extends AppCompatActivity {
         tvBio = findViewById(R.id.tvDetailUserBio);
         tvFollow = findViewById(R.id.tvDetailUserFollowingFollowers);
         ivDetailUserAvatar = findViewById(R.id.ivDetailUserAvatar);
+        btnFavorite = findViewById(R.id.btnFavorite);
+        btnFavorite.setOnClickListener(this);
 
-        User user = getIntent().getParcelableExtra(EXTRA_USER);
-        getDetailUser(user.getLogin());
+        User mUser = getIntent().getParcelableExtra(EXTRA_USER);
+        login = mUser.getLogin();
 
         Glide.with(getApplicationContext())
-                .load(user.getAvatarUrl())
+                .load(mUser.getAvatarUrl())
                 .apply(new RequestOptions().override(150,150))
                 .into(ivDetailUserAvatar);
 
-        SectionsPageAdapter sectionsPageAdapter = new SectionsPageAdapter(this, getSupportFragmentManager(), user);
+        SectionsPageAdapter sectionsPageAdapter = new SectionsPageAdapter(this, getSupportFragmentManager(), mUser);
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPageAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
@@ -57,36 +87,51 @@ public class DetailUserActivity extends AppCompatActivity {
 
         String titleDetail = getString(R.string.titleDetail);
         getSupportActionBar().setTitle(titleDetail);
-    }
 
-    private void getDetailUser(String username) {
-        ApiInterface Service;
-        retrofit2.Call<User> Call;
-        try {
-            Service = Api.getApi().create(ApiInterface.class);
-            Call = Service.getDetailUser(username);
-            Call.enqueue(new Callback<User>() {
-                @Override
-                public void onResponse(retrofit2.Call<User> call, Response<User> response) {
-                    String followers = getString(R.string.followers);
-                    String following = getString(R.string.following);
-                    User mUser = response.body();
-                    tvDetailUserName.setText(mUser.getName());
-                    tvFollow.setText(mUser.getFollowers() + " " + followers + " " + mUser.getFollowing() + " " + following);
-                    if (mUser.getBio() != null) {
-                        tvBio.setText(mUser.getBio());
+        String followers = getString(R.string.followers);
+        String following = getString(R.string.following);
+
+        UserViewModel userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
+
+        userViewModel.setmUserDataApi(mUser.getLogin(), getContentResolver());
+        userViewModel.getmUserDataApi().observe(this, new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+                tvFollow.setText(user.getFollowers() + " " + followers + " " + user.getFollowing() + " " + following );
+                tvDetailUserName.setText(user.getName());
+                if (user.getBio() != null){
+                    tvBio.setText(user.getBio());
+                }
+            }
+        });
+
+        userViewModel.setUserLocal(mUser.getLogin(), getContentResolver());
+        userViewModel.getUserLocal().observe(this, new Observer<List<UserLocal>>() {
+            @Override
+            public void onChanged(List<UserLocal> userLocals) {
+                Boolean check = false;
+                for (int i = 0; i < userLocals.size(); i++) {
+                    if (userLocals.get(i).getUsername().equals(login))
+                    {
+                        check = true;
+                        id = userLocals.get(i).getId();
                     }
                 }
-
-                @Override
-                public void onFailure(retrofit2.Call<User> call, Throwable t) {
-
+                if (check) {
+                    btnFavorite.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+                    btnFavorite.setText(removefromfavorite);
+                    Toast.makeText(DetailUserActivity.this, btnFavorite.getText(), Toast.LENGTH_SHORT).show();
+                } else {
+                    btnFavorite.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    btnFavorite.setText(addtofavorite);
                 }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            }
+        });
+        btnFavorite.setOnClickListener(this);
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -101,5 +146,30 @@ public class DetailUserActivity extends AppCompatActivity {
             startActivity(changeLanguageIntent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+
+        ContentValues values = new ContentValues();
+        values.put(USERNAME, login);
+
+        if(v.getId() == R.id.btnFavorite) {
+             if (btnFavorite.getText() == addtofavorite){
+                //content uri untuk insert
+                getContentResolver().insert(CONTENT_URI, values);
+                btnFavorite.setBackgroundColor(getResources().getColor(R.color.colorBackground));
+                btnFavorite.setText(removefromfavorite);
+
+            } else if (btnFavorite.getText() == removefromfavorite) {
+                 //uriwithusername untuk delete
+                 Uri uriWithId = Uri.parse(CONTENT_URI + "/" + id);
+                 Toast.makeText(this, uriWithId.toString(), Toast.LENGTH_SHORT).show();
+                 getContentResolver().delete(uriWithId, null, null );
+                 btnFavorite.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                 btnFavorite.setText(addtofavorite);
+            }
+        }
     }
 }

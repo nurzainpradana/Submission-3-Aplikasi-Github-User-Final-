@@ -8,4 +8,6 @@
     <string name="not_found">User Tidak Ditemukan</string>
     <string name="titleSearch">Aplikasi Pencarian Pengguna Github</string>
     <string name="titleDetail">Detail Pengguna</string>
+    <string name="addtofavorite">Tambah Ke Favorite</string>
+    <string name="removefromfavorite">Hapus Dari Favorite</string>
 </resources>
