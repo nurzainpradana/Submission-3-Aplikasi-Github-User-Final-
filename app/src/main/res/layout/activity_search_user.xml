@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@color/colorBackground"
-    tools:context="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.SearchUserActivity">
+    tools:context="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.SearchUserActivity">
 
     <LinearLayout
         android:id="@+id/inputSearchUser"

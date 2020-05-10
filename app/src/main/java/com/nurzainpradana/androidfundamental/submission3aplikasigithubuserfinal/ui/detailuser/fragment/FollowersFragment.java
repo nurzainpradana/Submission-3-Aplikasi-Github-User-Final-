@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.fragment;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.DetailUserActivity;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.adapter.UserAdapter;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.UserAdapter;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.FollowersViewModel;
 
 import java.util.List;
@@ -28,7 +28,6 @@ public class FollowersFragment extends Fragment {
     private RecyclerView rvFollowers;
     private ProgressBar progressBar;
     private UserAdapter userAdapter;
-    private FollowersViewModel followersViewModel;
 
     public static final String EXTRA_FOLLOWERS = "extra_followers";
 
@@ -50,31 +49,29 @@ public class FollowersFragment extends Fragment {
         rvFollowers = view.findViewById(R.id.rvFollowers);
         rvFollowers.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        assert getArguments() != null;
         String username = getArguments().getString(EXTRA_FOLLOWERS);
 
         showLoading(false);
 
-        followersViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel.class);
+        FollowersViewModel followersViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel.class);
 
         followersViewModel.setListFollowers(username, getContext());
 
-        followersViewModel.getListFollower().observe(getViewLifecycleOwner(), new Observer<List<User>>() {
-            @Override
-            public void onChanged(List<User> list) {
-                userAdapter = new UserAdapter();
-                userAdapter.notifyDataSetChanged();
-                userAdapter.setListUsers(list);
+        followersViewModel.getListFollower().observe(getViewLifecycleOwner(), list -> {
+            userAdapter = new UserAdapter();
+            userAdapter.notifyDataSetChanged();
+            userAdapter.setListUsers(list);
 
-                rvFollowers.setAdapter(userAdapter);
-               showLoading(false);
+            rvFollowers.setAdapter(userAdapter);
+            showLoading(false);
 
-                userAdapter.setOnItemClickCallback((User data) -> {
-                    showLoading(true);
-                    Intent goToDetailUser = new Intent(getContext(), DetailUserActivity.class);
-                    goToDetailUser.putExtra(DetailUserActivity.EXTRA_USER, data);
-                    startActivity(goToDetailUser);
-                });
-            }
+            userAdapter.setOnItemClickCallback((User data) -> {
+                showLoading(true);
+                Intent goToDetailUser = new Intent(getContext(), DetailUserActivity.class);
+                goToDetailUser.putExtra(DetailUserActivity.EXTRA_USER, data);
+                startActivity(goToDetailUser);
+            });
         });
 
 

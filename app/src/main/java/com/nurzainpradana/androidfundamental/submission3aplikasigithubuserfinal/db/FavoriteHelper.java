@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import static android.provider.BaseColumns._ID;
-import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.USERNAME;
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.TABLE_FAVORITE_NAME;
 
 public class FavoriteHelper {
@@ -18,7 +17,7 @@ public class FavoriteHelper {
 
     private static SQLiteDatabase database;
 
-    public FavoriteHelper(Context context) {
+    private FavoriteHelper(Context context) {
         databaseHelper = new DatabaseHelper(context);
     }
 

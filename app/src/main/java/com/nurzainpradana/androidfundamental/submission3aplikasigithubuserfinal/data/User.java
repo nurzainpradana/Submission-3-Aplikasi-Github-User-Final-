@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -42,15 +42,17 @@ public class User implements Parcelable{
         avatarUrl = in.readString();
         htmlUrl = in.readString();
         reposUrl = in.readString();
+        bio = in.readString();
     }
 
-    public User(String login, String avatarUrl, String htmlUrl, String reposUrl, Integer followers, Integer following) {
+    public User(String login, String avatarUrl, String htmlUrl, String reposUrl, Integer followers, Integer following, String bio) {
         this.login = login;
         this.avatarUrl = avatarUrl;
         this.htmlUrl = htmlUrl;
         this.reposUrl = reposUrl;
         this.followers = followers;
         this.following = following;
+        this.bio = bio;
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -76,69 +78,31 @@ public class User implements Parcelable{
         dest.writeString(avatarUrl);
         dest.writeString(htmlUrl);
         dest.writeString(reposUrl);
+        dest.writeString(bio);
     }
 
     public String getLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getAvatarUrl() {
         return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
-    public String getHtmlUrl() {
-        return htmlUrl;
-    }
-
-    public void setHtmlUrl(String htmlUrl) {
-        this.htmlUrl = htmlUrl;
-    }
-
-    public String getReposUrl() {
-        return reposUrl;
-    }
-
-    public void setReposUrl(String reposUrl) {
-        this.reposUrl = reposUrl;
     }
 
     public Integer getFollowers() {
         return followers;
     }
 
-    public void setFollowers(Integer followers) {
-        this.followers = followers;
-    }
-
     public Integer getFollowing() {
         return following;
-    }
-
-    public void setFollowing(Integer following) {
-        this.following = following;
     }
 
     public String getBio() {
         return bio;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }

@@ -8,6 +8,9 @@
     <string name="not_found">User Tidak Ditemukan</string>
     <string name="titleSearch">Aplikasi Pencarian Pengguna Github</string>
     <string name="titleDetail">Detail Pengguna</string>
-    <string name="addtofavorite">Tambah Ke Favorite</string>
-    <string name="removefromfavorite">Hapus Dari Favorite</string>
+    <string name="addtofavorite">Tambah Ke Favorit</string>
+    <string name="removefromfavorite">Hapus Dari Favorit</string>
+    <string name="success_remove_from_favorite">Berhasil Menghapus dari Favorit</string>
+    <string name="success_add_to_favorite">Sukses Menambahkan ke Favorit</string>
+    <string name="favorite">Favorit</string>
 </resources>

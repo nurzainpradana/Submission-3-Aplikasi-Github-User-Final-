@@ -13,10 +13,10 @@ import androidx.lifecycle.ViewModel;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.Api;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.ApiInterface;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.Result;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.UserLocal;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.MappingHelper;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.Result;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.UserLocal;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.helper.MappingHelper;
 
 import java.util.ArrayList;
 import java.util.List;

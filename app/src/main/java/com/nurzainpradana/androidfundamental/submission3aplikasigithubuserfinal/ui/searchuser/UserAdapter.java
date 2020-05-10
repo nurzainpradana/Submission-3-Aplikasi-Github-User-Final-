@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.adapter;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 
 import java.util.List;
 

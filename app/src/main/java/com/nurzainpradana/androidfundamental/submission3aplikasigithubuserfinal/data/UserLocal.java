@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,7 +12,7 @@ public class UserLocal implements Parcelable {
         this.username = username;
     }
 
-    protected UserLocal(Parcel in) {
+    private UserLocal(Parcel in) {
         if (in.readByte() == 0) {
             id = null;
         } else {

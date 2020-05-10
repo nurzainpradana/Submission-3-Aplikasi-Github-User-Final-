@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.Api;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.ApiInterface;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 
 import java.util.List;
 

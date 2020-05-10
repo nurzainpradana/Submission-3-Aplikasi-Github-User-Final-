@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.provider;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

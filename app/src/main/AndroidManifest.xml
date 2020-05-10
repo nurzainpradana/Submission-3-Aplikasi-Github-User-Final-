@@ -17,15 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <provider
-            android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.provider.FavoriteProvider"
+            android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.provider.FavoriteProvider"
             android:authorities="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE"
             android:writePermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE" />
 
-        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.DetailUserActivity" />
-        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity.SearchUserActivity">
+        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity" />
+        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.SearchUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

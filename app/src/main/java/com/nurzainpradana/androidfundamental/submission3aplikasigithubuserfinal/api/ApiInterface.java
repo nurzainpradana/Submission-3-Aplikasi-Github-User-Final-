@@ -1,7 +1,7 @@
 package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api;
 
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.Result;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.Result;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 
 import java.util.List;
 

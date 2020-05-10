@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,11 +11,12 @@ public class Result {
     @Expose
     private List<User> mResultMember;
 
+    public Result(List<User> mResultMember) {
+        this.mResultMember = mResultMember;
+    }
+
     public List<User> getmResultMember() {
         return mResultMember;
     }
 
-    public void setmResultMember(List<User> mResultMember) {
-        this.mResultMember = mResultMember;
-    }
 }

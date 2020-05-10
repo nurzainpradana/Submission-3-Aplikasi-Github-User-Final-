@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.adapter;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,16 +11,16 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.fragment.FollowersFragment;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.fragment.FollowingFragment;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.fragment.FollowersFragment;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.fragment.FollowingFragment;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 
 public class SectionsPageAdapter extends FragmentPagerAdapter {
 
     private final Context mContext;
     private User user;
 
-    public SectionsPageAdapter(Context mContext, FragmentManager fm, User user) {
+    SectionsPageAdapter(Context mContext, FragmentManager fm, User user) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.mContext = mContext;
         this.user = user;
@@ -52,6 +52,7 @@ public class SectionsPageAdapter extends FragmentPagerAdapter {
                 fragment.setArguments(bundleFollowing);
                 break;
         }
+        assert fragment != null;
         return fragment;
     }
 

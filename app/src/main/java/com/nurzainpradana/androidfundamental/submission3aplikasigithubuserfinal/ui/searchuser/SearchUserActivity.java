@@ -1,4 +1,4 @@
-package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.activity;
+package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.adapter.UserAdapter;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.model.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.UserViewModel;
+
+import java.util.Objects;
 
 public class SearchUserActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -35,7 +37,7 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_search_user);
 
         String titleSearch = getString(R.string.titleSearch);
-        getSupportActionBar().setTitle(titleSearch);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(titleSearch);
 
         userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
 
@@ -97,13 +99,13 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.language_menu, menu);
+        getMenuInflater().inflate(R.menu.option_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.action_change_setting) {
+        if (item.getItemId() == R.id.change_setting) {
             Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(changeLanguageIntent);
         }
