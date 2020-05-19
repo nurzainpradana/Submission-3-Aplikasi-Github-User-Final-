@@ -13,4 +13,6 @@
     <string name="success_remove_from_favorite">Berhasil Menghapus dari Favorit</string>
     <string name="success_add_to_favorite">Sukses Menambahkan ke Favorit</string>
     <string name="favorite">Favorit</string>
+    <string name="user_favorite">User Favorit</string>
+    <string name="reminder_setting">Atur Pengingat</string>
 </resources>

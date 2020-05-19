@@ -13,4 +13,6 @@
     <string name="success_remove_from_favorite">Success Remove From Favorite</string>
     <string name="success_add_to_favorite">Sucess Add To Favorite</string>
     <string name="favorite">Favorite</string>
+    <string name="user_favorite">User Favorite</string>
+    <string name="reminder_setting">Reminder Setting</string>
 </resources>

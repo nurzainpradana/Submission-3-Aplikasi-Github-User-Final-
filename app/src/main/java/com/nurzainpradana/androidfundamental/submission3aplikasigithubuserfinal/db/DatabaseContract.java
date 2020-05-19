@@ -12,9 +12,12 @@ public class DatabaseContract {
     public DatabaseContract() {
     }
 
-    public static final class NoteColumns implements BaseColumns {
+    public static final class UserColumns implements BaseColumns {
 
-        public static String USERNAME = "username";
+        public static String LOGIN = "login";
+        public static String NAME = "name";
+        public static String AVATAR_URL = "avatar_url";
+
 
         //Untuk membuat URI content://com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
         public static final Uri CONTENT_URI = new Uri.Builder().scheme(SCHEME)

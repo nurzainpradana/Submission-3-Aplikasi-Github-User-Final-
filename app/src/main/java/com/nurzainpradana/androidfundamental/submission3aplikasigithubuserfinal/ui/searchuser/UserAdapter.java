@@ -39,10 +39,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     public UserAdapter() {
     }
 
-    public List<User> getListUsers() {
-        return listUsers;
-    }
-
     public void setListUsers(List<User> listUsers) {
         this.listUsers = listUsers;
     }
@@ -70,11 +66,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return this.listUsers.size();
     }
 
-    public class UserViewHolder extends RecyclerView.ViewHolder{
+    class UserViewHolder extends RecyclerView.ViewHolder{
         TextView tvName;
         CircleImageView ivUserAvatar;
 
-        public UserViewHolder(@NonNull View itemView) {
+        UserViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvUserName);
             ivUserAvatar = itemView.findViewById(R.id.ivUserAvatar);
@@ -88,12 +84,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
                     .apply(new RequestOptions().override(60, 60))
                     .into(ivUserAvatar);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onItemClickCallback.onItemClicked(listUsers.get(getAdapterPosition()));
-                }
-            });
+            itemView.setOnClickListener(v -> onItemClickCallback.onItemClicked(listUsers.get(UserViewHolder.this.getAdapterPosition())));
         }
     }
 

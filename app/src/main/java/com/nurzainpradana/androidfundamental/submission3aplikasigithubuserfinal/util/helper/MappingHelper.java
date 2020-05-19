@@ -2,29 +2,26 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 
 import android.database.Cursor;
 
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.UserLocal;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract;
 
 import java.util.ArrayList;
 
 public class MappingHelper {
 
-    public static ArrayList<UserLocal> mapCursorToArrayList(Cursor notesCursor) {
-        ArrayList<UserLocal> notesList = new ArrayList<>();
+    public static ArrayList<User> mapCursorToArrayList(Cursor notesCursor) {
+        ArrayList<User> userList = new ArrayList<>();
 
         while (notesCursor.moveToNext()) {
-            int id = notesCursor.getInt(notesCursor.getColumnIndexOrThrow(DatabaseContract.NoteColumns._ID));
-            String username = notesCursor.getString(notesCursor.getColumnIndexOrThrow(DatabaseContract.NoteColumns.USERNAME));
-            notesList.add(new UserLocal(id, username));
+            int id = notesCursor.getInt(notesCursor.getColumnIndexOrThrow(DatabaseContract.UserColumns._ID));
+            String login = notesCursor.getString(notesCursor.getColumnIndexOrThrow(DatabaseContract.UserColumns.LOGIN));
+            String name = notesCursor.getString(notesCursor.getColumnIndexOrThrow(DatabaseContract.UserColumns.NAME));
+            String avatar_url = notesCursor.getString(notesCursor.getColumnIndexOrThrow(DatabaseContract.UserColumns.AVATAR_URL));
+
+            userList.add(new User(id, login, name, avatar_url));
         }
 
-        return notesList;
-    }
-
-    public static UserLocal mapCursorToObject(Cursor notesCursor) {
-        notesCursor.moveToFirst();
-        int id = notesCursor.getInt(notesCursor.getColumnIndexOrThrow(DatabaseContract.NoteColumns._ID));
-        String username = notesCursor.getString(notesCursor.getColumnIndexOrThrow(DatabaseContract.NoteColumns.USERNAME));
-        return new UserLocal(id, username);
+        return userList;
     }
 }

@@ -7,6 +7,7 @@ public class UserLocal implements Parcelable {
     private Integer id;
     private String username;
 
+
     public UserLocal(Integer id, String username) {
         this.id = id;
         this.username = username;

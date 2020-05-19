@@ -3,9 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal">
 
-    <permission android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE" android:protectionLevel="normal"/>
-    <permission android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE" android:protectionLevel="normal"/>
+    <permission
+        android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,16 +22,18 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".ui.setting.SettingAct"></activity>
+
         <provider
-            android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.provider.FavoriteProvider"
+            android:name=".util.provider.FavoriteProvider"
             android:authorities="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal"
-            android:enabled="true"
             android:exported="true"
             android:readPermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE"
             android:writePermission="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.WRITE_DATABASE" />
 
-        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity" />
-        <activity android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.SearchUserActivity">
+        <activity android:name=".ui.favorite.FavoriteActivity" />
+        <activity android:name=".ui.detailuser.DetailUserActivity" />
+        <activity android:name=".ui.searchuser.SearchUserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

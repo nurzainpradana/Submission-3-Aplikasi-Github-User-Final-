@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.favorite.FavoriteActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.UserViewModel;
 
 import java.util.Objects;
@@ -30,6 +31,8 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
     private RecyclerView recyclerView;
     private UserViewModel userViewModel;
     private UserAdapter adapter;
+
+    public static final String EXTRA_USER = "extra_user";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +60,11 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
             recyclerView.setAdapter(adapter);
             showLoading(false);
 
-            adapter.setOnItemClickCallback((User data) -> {
-                showLoading(true);
+            adapter.setOnItemClickCallback(data -> {
+                SearchUserActivity.this.showLoading(true);
                 Intent goToDetailUser = new Intent(SearchUserActivity.this, DetailUserActivity.class);
-                goToDetailUser.putExtra(DetailUserActivity.EXTRA_USER, data);
-                startActivity(goToDetailUser);
+                goToDetailUser.putExtra(EXTRA_USER, data);
+                SearchUserActivity.this.startActivity(goToDetailUser);
             });
         });
     }
@@ -108,6 +111,11 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
         if (item.getItemId() == R.id.change_setting) {
             Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(changeLanguageIntent);
+        }
+
+        if (item.getItemId() == R.id.favorite) {
+            Intent favoriteIntent = new Intent(SearchUserActivity.this, FavoriteActivity.class);
+            startActivity(favoriteIntent);
         }
         return super.onOptionsItemSelected(item);
     }

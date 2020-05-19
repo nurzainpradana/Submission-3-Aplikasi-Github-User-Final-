@@ -56,7 +56,7 @@ public class FollowersFragment extends Fragment {
 
         FollowersViewModel followersViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel.class);
 
-        followersViewModel.setListFollowers(username, getContext());
+        followersViewModel.setListFollowers(username);
 
         followersViewModel.getListFollower().observe(getViewLifecycleOwner(), list -> {
             userAdapter = new UserAdapter();

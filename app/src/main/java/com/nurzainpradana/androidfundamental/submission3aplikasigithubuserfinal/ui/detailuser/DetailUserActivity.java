@@ -28,8 +28,10 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.CONTENT_URI;
-import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.USERNAME;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.AVATAR_URL;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.CONTENT_URI;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.LOGIN;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.NAME;
 
 public class DetailUserActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,7 +39,9 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
     CircleImageView ivDetailUserAvatar;
     Button btnFavorite;
 
-    public static String login = "";
+    ContentValues values = new ContentValues();
+
+    public String login = "";
     public Integer id;
 
     private final static String addtofavorite = "Add To Favorite";
@@ -63,9 +67,8 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
 
 
         User mUser = getIntent().getParcelableExtra(EXTRA_USER);
-        if (mUser != null) {
+        if(mUser != null){
             login = mUser.getLogin();
-
             Glide.with(getApplicationContext())
                     .load(mUser.getAvatarUrl())
                     .apply(new RequestOptions().override(150, 150))
@@ -73,7 +76,7 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
 
             UserViewModel userViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(UserViewModel.class);
 
-            userViewModel.setmUserDataApi(mUser.getLogin(), getContentResolver());
+            userViewModel.setmUserDataApi(mUser.getLogin());
             userViewModel.getmUserDataApi().observe(this, user -> {
                 String folow_text = user.getFollowers() + " " + followers + " " + user.getFollowing() + " " + following;
                 tvFollow.setText(folow_text);
@@ -81,13 +84,18 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
                 if (user.getBio() != null){
                     tvBio.setText(user.getBio());
                 }
+
+                values.put(LOGIN, user.getLogin());
+                values.put(NAME, user.getName());
+                values.put(AVATAR_URL, user.getAvatarUrl());
+
             });
 
             userViewModel.setUserLocal(mUser.getLogin(), getContentResolver());
             userViewModel.getUserLocal().observe(this, userLocals -> {
                 boolean check = false;
                 for (int i = 0; i < userLocals.size(); i++) {
-                    if (userLocals.get(i).getUsername().equals(login))
+                    if (userLocals.get(i).getLogin().equals(login))
                     {
                         check = true;
                         id = userLocals.get(i).getId();
@@ -103,6 +111,7 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
                 }
             });
         }
+
         SectionsPageAdapter sectionsPageAdapter = new SectionsPageAdapter(this, getSupportFragmentManager(), mUser);
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPageAdapter);
@@ -134,9 +143,6 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
-        ContentValues values = new ContentValues();
-        values.put(USERNAME, login);
-
         if(v.getId() == R.id.btnFavorite) {
              if (btnFavorite.getText() == addtofavorite){
                 //content uri untuk insert

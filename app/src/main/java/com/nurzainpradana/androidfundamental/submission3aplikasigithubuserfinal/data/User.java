@@ -6,20 +6,13 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User implements Parcelable{
+public class User implements Parcelable {
     @SerializedName("login")
     @Expose
     private String login;
     @SerializedName("avatar_url")
     @Expose
     private String avatarUrl;
-    @SerializedName("html_url")
-    @Expose
-    private String htmlUrl;
-
-    @SerializedName("repos_url")
-    @Expose
-    private String reposUrl;
 
     @SerializedName("followers")
     @Expose
@@ -37,22 +30,33 @@ public class User implements Parcelable{
     @Expose
     private String name;
 
-    protected User(Parcel in) {
-        login = in.readString();
-        avatarUrl = in.readString();
-        htmlUrl = in.readString();
-        reposUrl = in.readString();
-        bio = in.readString();
-    }
+    private Integer id;
 
-    public User(String login, String avatarUrl, String htmlUrl, String reposUrl, Integer followers, Integer following, String bio) {
+    public User(String login, String name, String avatarUrl, Integer followers, Integer following, String bio) {
         this.login = login;
+        this.name = name;
         this.avatarUrl = avatarUrl;
-        this.htmlUrl = htmlUrl;
-        this.reposUrl = reposUrl;
         this.followers = followers;
         this.following = following;
         this.bio = bio;
+    }
+
+    public User() {
+    }
+
+    public User(Integer id, String login, String name, String avatarUrl){
+        this.id = id;
+        this.login = login;
+        this.name = name;
+        this.avatarUrl = avatarUrl;
+    }
+
+    public User(Parcel in) {
+        id = in.readInt();
+        login = in.readString();
+        name = in.readString();
+        avatarUrl = in.readString();
+        bio = in.readString();
     }
 
     public static final Creator<User> CREATOR = new Creator<User>() {
@@ -66,20 +70,6 @@ public class User implements Parcelable{
             return new User[size];
         }
     };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(login);
-        dest.writeString(avatarUrl);
-        dest.writeString(htmlUrl);
-        dest.writeString(reposUrl);
-        dest.writeString(bio);
-    }
 
     public String getLogin() {
         return login;
@@ -105,4 +95,25 @@ public class User implements Parcelable{
         return name;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(login);
+        dest.writeString(name);
+        dest.writeString(avatarUrl);
+        dest.writeString(bio);
+    }
 }

@@ -9,7 +9,7 @@ import android.net.Uri;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.FavoriteHelper;
 
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.AUTHORITY;
-import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.CONTENT_URI;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.CONTENT_URI;
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.TABLE_FAVORITE_NAME;
 
 public class FavoriteProvider extends ContentProvider {
@@ -47,7 +47,7 @@ public class FavoriteProvider extends ContentProvider {
                 break;
 
             case FAV_ID:
-                cursor = favoriteHelper.queryByUsername(uri.getLastPathSegment());
+                cursor = favoriteHelper.queryByLogin(uri.getLastPathSegment());
                 break;
 
             default:

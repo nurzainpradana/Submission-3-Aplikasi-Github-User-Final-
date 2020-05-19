@@ -13,16 +13,16 @@ import retrofit2.http.Query;
 public interface ApiInterface {
 
     @GET("/search/users")
-    Call<Result> getListUser(@Query("q") String username);
+    Call<Result> getListUser(@Query("q") String login);
 
-    @GET("/users/{username}")
-    Call<User> getDetailUser(@Path("username") String username);
+    @GET("/users/{login}")
+    Call<User> getDetailUser(@Path("login") String login);
 
-    @GET("/users/{username}/followers")
-    Call<List<User>> getListFollowers(@Path("username") String username);
+    @GET("/users/{login}/followers")
+    Call<List<User>> getListFollowers(@Path("login") String login);
 
-    @GET("/users/{username}/following")
-    Call<List<User>> getListFollowing(@Path("username") String username);
+    @GET("/users/{login}/following")
+    Call<List<User>> getListFollowing(@Path("login") String login);
 
 
 

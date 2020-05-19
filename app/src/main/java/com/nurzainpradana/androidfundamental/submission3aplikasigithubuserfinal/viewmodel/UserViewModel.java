@@ -24,16 +24,15 @@ import java.util.List;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.NoteColumns.CONTENT_URI;
+import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.CONTENT_URI;
 
 public class UserViewModel extends ViewModel {
     private MutableLiveData<List<User>> listUsers = new MutableLiveData<>();
-    private MutableLiveData<List<UserLocal>> listUserDataLocal = new MutableLiveData<>();
+    private MutableLiveData<List<User>> listUserDataLocal = new MutableLiveData<>();
     private MutableLiveData<User> mUserDataApi = new MutableLiveData<>();
 
     private User user;
     private Context context;
-    private Uri uriWithString;
 
     public Context getContext() {
         return context;
@@ -41,10 +40,6 @@ public class UserViewModel extends ViewModel {
 
     public void setContext(Context context) {
         this.context = context;
-    }
-
-    public void setListUsers(MutableLiveData<List<User>> listUsers) {
-        this.listUsers = listUsers;
     }
 
     public MutableLiveData<List<User>> getListUsers() {
@@ -80,7 +75,7 @@ public class UserViewModel extends ViewModel {
         }
     }
 
-    public MutableLiveData<List<UserLocal>> getUserLocal() {
+    public MutableLiveData<List<User>> getUserLocal() {
         return listUserDataLocal;
 
     }
@@ -88,7 +83,7 @@ public class UserViewModel extends ViewModel {
     public void setUserLocal(String username, ContentResolver contentResolver) {
         Cursor cursor = contentResolver.query(CONTENT_URI, null, null, null, null);
         if (cursor != null) {
-            ArrayList<UserLocal> userLocal = MappingHelper.mapCursorToArrayList(cursor);
+            ArrayList<User> userLocal = MappingHelper.mapCursorToArrayList(cursor);
             cursor.close();
             listUserDataLocal.postValue(userLocal);
         }
@@ -98,12 +93,12 @@ public class UserViewModel extends ViewModel {
         return mUserDataApi;
     }
 
-    public void setmUserDataApi(String username, ContentResolver contentResolver) {
+    public void setmUserDataApi(String login) {
         ApiInterface Service;
         retrofit2.Call<User> Call;
         try {
             Service = Api.getApi().create(ApiInterface.class);
-            Call = Service.getDetailUser(username);
+            Call = Service.getDetailUser(login);
             Call.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(retrofit2.Call<User> call, Response<User> response) {
