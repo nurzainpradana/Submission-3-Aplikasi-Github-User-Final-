@@ -15,4 +15,6 @@
     <string name="favorite">Favorite</string>
     <string name="user_favorite">User Favorite</string>
     <string name="reminder_setting">Reminder Setting</string>
+    <string name="dummy_language">dummy_language</string>
+    <string name="setting">Setting</string>
 </resources>

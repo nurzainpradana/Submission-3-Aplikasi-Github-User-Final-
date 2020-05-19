@@ -22,7 +22,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.setting.SettingAct"></activity>
+        <receiver
+            android:name=".util.receiver.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".ui.setting.SettingAct" />
 
         <provider
             android:name=".util.provider.FavoriteProvider"

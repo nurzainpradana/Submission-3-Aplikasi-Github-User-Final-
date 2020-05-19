@@ -15,4 +15,5 @@
     <string name="favorite">Favorit</string>
     <string name="user_favorite">User Favorit</string>
     <string name="reminder_setting">Atur Pengingat</string>
+    <string name="setting">Setting</string>
 </resources>

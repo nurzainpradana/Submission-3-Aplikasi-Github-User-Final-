@@ -20,6 +20,7 @@ import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.favorite.FavoriteActivity;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.setting.SettingAct;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.UserViewModel;
 
 import java.util.Objects;
@@ -108,9 +109,11 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.change_setting) {
-            Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            startActivity(changeLanguageIntent);
+        if (item.getItemId() == R.id.setting) {
+            Intent goToSetting = new Intent(SearchUserActivity.this, SettingAct.class);
+            startActivity(goToSetting);
+            //Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            //startActivity(changeLanguageIntent);
         }
 
         if (item.getItemId() == R.id.favorite) {

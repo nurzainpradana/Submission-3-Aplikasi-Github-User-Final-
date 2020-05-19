@@ -134,7 +134,7 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.change_setting) {
+        if (item.getItemId() == R.id.setting) {
             Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(changeLanguageIntent);
         }
