@@ -2,6 +2,7 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
@@ -25,6 +26,9 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
 
     AlarmReceiver alarmReceiver;
 
+    private String PREF_REMINDER = "pref_reminder";
+    private SharedPreferences preferences = getSharedPreferences(PREF_REMINDER, Context.MODE_PRIVATE);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,14 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
         current_language.setText(Locale.getDefault().getDisplayLanguage());
 
         changeLanguage.setOnClickListener(this);
+        preferences = getSharedPreferences(PREF_REMINDER, Context.MODE_PRIVATE);
+        boolean reminderSet = preferences.getBoolean(PREF_REMINDER, false);
+        if (reminderSet){
+            switchToggle.setChecked(true);
+        } else {
+            switchToggle.setChecked(false);
+        }
+
         switchToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 String repeatTime = "09:00";
@@ -45,8 +57,10 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
                 Context context = getApplicationContext();
                 alarmReceiver.setRepeatingAlarm(context, AlarmReceiver.TITLE, repeatTime, repeatMessage);
                 Toast.makeText(context, repeatMessage, Toast.LENGTH_SHORT).show();
+                saveSetting(true);
             } else {
-                alarmReceiver.cancelAlarm(this, AlarmReceiver.TITLE);
+                alarmReceiver.cancelAlarm(this);
+                saveSetting(false);
             }
         });
 
@@ -60,5 +74,12 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
             Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
             startActivity(changeLanguageIntent);
         }
+    }
+
+    public void saveSetting(Boolean reminder_setting) {
+        preferences = getSharedPreferences(PREF_REMINDER, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(PREF_REMINDER, reminder_setting);
+        editor.apply();
     }
 }

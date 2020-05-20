@@ -17,7 +17,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.setting.SettingAct;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -37,7 +36,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         String message = intent.getStringExtra(EXTRA_MESSAGE);
 
         showAlarmNotification(context, message);
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 
     public void setRepeatingAlarm(Context context, String type, String time, String message){
@@ -110,11 +108,10 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
     }
 
-    public void cancelAlarm(Context context, String title) {
+    public void cancelAlarm(Context context) {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmReceiver.class);
-        int requestCode = ID_REPEATING;
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0);
         pendingIntent.cancel();
 
         if (alarmManager != null) {
