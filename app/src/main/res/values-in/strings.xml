@@ -15,5 +15,8 @@
     <string name="favorite">Favorit</string>
     <string name="user_favorite">User Favorit</string>
     <string name="reminder_setting">Atur Pengingat</string>
-    <string name="setting">Setting</string>
+    <string name="setting">Pengaturan</string>
+    <string name="alarm_message">Ayo temukan pengguna populer di Github!</string>
+    <string name="repeat_set_up">Pengingat Dihidupkan</string>
+    <string name="repeat_set_down">Pengingat Dimatikan</string>
 </resources>

@@ -1,17 +1,19 @@
 package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.setting;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.receiver.AlarmReceiver;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -20,6 +22,8 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
     LinearLayout changeLanguage;
     TextView current_language;
     Switch switchToggle;
+
+    AlarmReceiver alarmReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +34,19 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
         switchToggle = findViewById(R.id.switch_toggle);
         current_language = findViewById(R.id.current_language);
 
+        alarmReceiver = new AlarmReceiver();
         current_language.setText(Locale.getDefault().getDisplayLanguage());
 
         changeLanguage.setOnClickListener(this);
-        switchToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    //toggle is enabled
-                } else {
-                    //toggle is disabled
-                }
+        switchToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                String repeatTime = "09:00";
+                String repeatMessage = getResources().getString(R.string.alarm_message);
+                Context context = getApplicationContext();
+                alarmReceiver.setRepeatingAlarm(context, AlarmReceiver.TITLE, repeatTime, repeatMessage);
+                Toast.makeText(context, repeatMessage, Toast.LENGTH_SHORT).show();
+            } else {
+                alarmReceiver.cancelAlarm(this, AlarmReceiver.TITLE);
             }
         });
 

@@ -17,4 +17,7 @@
     <string name="reminder_setting">Reminder Setting</string>
     <string name="dummy_language">dummy_language</string>
     <string name="setting">Setting</string>
+    <string name="alarm_message">Let\'s find user popular user on Github!</string>
+    <string name="repeat_set_up">Repeating Alarm Set Up</string>
+    <string name="repeat_set_down">Repeating Alarm Set Down</string>
 </resources>

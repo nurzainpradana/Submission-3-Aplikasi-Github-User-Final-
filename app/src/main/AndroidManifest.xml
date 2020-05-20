@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal">
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <permission
         android:name="com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.READ_DATABASE"
         android:protectionLevel="normal" />
@@ -25,7 +26,7 @@
         <receiver
             android:name=".util.receiver.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true"/>
 
         <activity android:name=".ui.setting.SettingAct" />
 
