@@ -10,100 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6723dcb4-da93-41f7-a5dc-c40370480d6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_14_7_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_8_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/consumerapp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/androidTest/java/com/nurzainpradana/androidfundamental/consumerapp/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/data/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/data/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/data/UserLocal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/db/DatabaseContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/ui/favorite/FavoriteActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/ui/favorite/FavoriteAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/ui/setting/SettingAct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/util/helper/MappingHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/util/receiver/AlarmReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/java/com/nurzainpradana/androidfundamental/consumerapp/viewmodel/UserViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/baseline_alarm_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/baseline_language_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/bg_btn_blue_gradiation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/bg_input_edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/bg_input_one.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/bg_input_two.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_favorite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_github.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_language.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_search_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_setting.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/drawable/ic_settings_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/activity_detail_user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/activity_favorite.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/activity_search_user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/activity_setting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/fragment_followers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/fragment_following.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/layout/user_items.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/menu/option_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values-in/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/values-in/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/main/res/values/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consumerapp/src/test/java/com/nurzainpradana/androidfundamental/consumerapp/ExampleUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_9_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_9_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_9_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_9_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_14_4_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_7_1_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Submission 3 Aplikasi Github User Final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Submission 3 Aplikasi Github User Final.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/setting/SettingAct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/setting/SettingAct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-in/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/DetailUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/DetailUserActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/searchuser/SearchUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/searchuser/SearchUserActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/helper/MappingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/helper/MappingHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/provider/FavoriteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/provider/FavoriteProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/FollowingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/FollowingViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/UserViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,8 +57,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="resourceFile" />
         <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>

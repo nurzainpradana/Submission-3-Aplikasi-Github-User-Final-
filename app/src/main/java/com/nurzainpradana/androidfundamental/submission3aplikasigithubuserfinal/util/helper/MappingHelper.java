@@ -3,7 +3,6 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 import android.database.Cursor;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.UserLocal;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract;
 
 import java.util.ArrayList;

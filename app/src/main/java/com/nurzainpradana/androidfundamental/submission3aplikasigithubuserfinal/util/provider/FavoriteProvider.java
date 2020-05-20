@@ -6,7 +6,11 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.net.Uri;
 
+import androidx.annotation.NonNull;
+
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.FavoriteHelper;
+
+import java.util.Objects;
 
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.AUTHORITY;
 import static com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.db.DatabaseContract.UserColumns.CONTENT_URI;
@@ -38,7 +42,7 @@ public class FavoriteProvider extends ContentProvider {
     }
 
     @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         Cursor cursor;
         switch (sUriMatcher.match(uri)) {
@@ -58,41 +62,33 @@ public class FavoriteProvider extends ContentProvider {
     }
 
     @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
+    public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
         int deleted;
-        switch (sUriMatcher.match(uri)) {
-            case FAV_ID:
-                deleted = favoriteHelper.deleteById(uri.getLastPathSegment());
-                break;
-
-            default:
-                deleted = 0;
-                break;
+        if (sUriMatcher.match(uri) == FAV_ID) {
+            deleted = favoriteHelper.deleteById(uri.getLastPathSegment());
+        } else {
+            deleted = 0;
         }
 
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return deleted;
     }
 
     @Override
-    public String getType(Uri uri) {
+    public String getType(@NonNull Uri uri) {
         return null;
     }
 
     @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    public Uri insert(@NonNull Uri uri, ContentValues values) {
         long added;
-        switch (sUriMatcher.match(uri)) {
-            case FAV:
-                added = favoriteHelper.insert(values);
-                break;
-
-            default:
-                added = 0;
-                break;
+        if (sUriMatcher.match(uri) == FAV) {
+            added = favoriteHelper.insert(values);
+        } else {
+            added = 0;
         }
 
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return Uri.parse(CONTENT_URI + "/" + added);
     }
 
@@ -101,20 +97,16 @@ public class FavoriteProvider extends ContentProvider {
 
 
     @Override
-    public int update(Uri uri, ContentValues values, String selection,
+    public int update(@NonNull Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         int updated;
-        switch (sUriMatcher.match(uri)) {
-            case FAV_ID:
-                updated = favoriteHelper.update(uri.getLastPathSegment(), values);
-                break;
-
-            default:
-                updated = 0;
-                break;
+        if (sUriMatcher.match(uri) == FAV_ID) {
+            updated = favoriteHelper.update(uri.getLastPathSegment(), values);
+        } else {
+            updated = 0;
         }
 
-        getContext().getContentResolver().notifyChange(CONTENT_URI, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(CONTENT_URI, null);
         return updated;
     }
 }

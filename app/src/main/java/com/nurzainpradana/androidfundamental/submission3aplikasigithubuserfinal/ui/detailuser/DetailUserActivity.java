@@ -86,7 +86,7 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
 
             });
 
-            userViewModel.setUserLocal(mUser.getLogin(), getContentResolver());
+            userViewModel.setUserLocal(getContentResolver());
             userViewModel.getUserLocal().observe(this, userLocals -> {
                 boolean check = false;
                 for (int i = 0; i < userLocals.size(); i++) {

@@ -23,11 +23,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
+        tools:targetApi="m"
+        tools:ignore="AllowBackup">
         <receiver
             android:name=".util.receiver.AlarmReceiver"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true"
+            tools:ignore="ExportedReceiver" />
 
         <activity android:name=".ui.setting.SettingAct" />
 

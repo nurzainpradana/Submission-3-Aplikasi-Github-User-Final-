@@ -3,10 +3,10 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
-import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -15,11 +15,11 @@ import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.api.ApiInterface;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.Result;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.UserLocal;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.util.helper.MappingHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -55,9 +55,10 @@ public class UserViewModel extends ViewModel {
             Call = Service.getListUser(username);
             Call.enqueue(new Callback<Result>() {
                 @Override
-                public void onResponse(retrofit2.Call<Result> call, Response<Result> response) {
+                public void onResponse(@NonNull retrofit2.Call<Result> call, @NonNull Response<Result> response) {
                     Log.d("Response", "" + " " + response.body());
                     List<User> listUser;
+                    assert response.body() != null;
                     listUser = response.body().getmResultMember();
                     listUsers.postValue(listUser);
                     if (listUser.isEmpty()) {
@@ -66,8 +67,8 @@ public class UserViewModel extends ViewModel {
 
                 }
                 @Override
-                public void onFailure(retrofit2.Call<Result> call, Throwable t) {
-                    Log.d("Message", t.getMessage());
+                public void onFailure(@NonNull retrofit2.Call<Result> call, @NonNull Throwable t) {
+                    Log.d("Message", Objects.requireNonNull(t.getMessage()));
                 }
             });
         } catch (Exception e) {
@@ -80,7 +81,7 @@ public class UserViewModel extends ViewModel {
 
     }
 
-    public void setUserLocal(String username, ContentResolver contentResolver) {
+    public void setUserLocal(ContentResolver contentResolver) {
         Cursor cursor = contentResolver.query(CONTENT_URI, null, null, null, null);
         if (cursor != null) {
             ArrayList<User> userLocal = MappingHelper.mapCursorToArrayList(cursor);
@@ -101,13 +102,13 @@ public class UserViewModel extends ViewModel {
             Call = Service.getDetailUser(login);
             Call.enqueue(new Callback<User>() {
                 @Override
-                public void onResponse(retrofit2.Call<User> call, Response<User> response) {
+                public void onResponse(@NonNull retrofit2.Call<User> call, @NonNull Response<User> response) {
                     user = response.body();
                     mUserDataApi.postValue(user);
                 }
 
                 @Override
-                public void onFailure(retrofit2.Call<User> call, Throwable t) {
+                public void onFailure(@NonNull retrofit2.Call<User> call, @NonNull Throwable t) {
 
                 }
             });

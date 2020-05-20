@@ -2,7 +2,6 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.favorite.FavoriteActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.setting.SettingAct;
@@ -112,8 +110,6 @@ public class SearchUserActivity extends AppCompatActivity implements View.OnClic
         if (item.getItemId() == R.id.setting) {
             Intent goToSetting = new Intent(SearchUserActivity.this, SettingAct.class);
             startActivity(goToSetting);
-            //Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            //startActivity(changeLanguageIntent);
         }
 
         if (item.getItemId() == R.id.favorite) {
