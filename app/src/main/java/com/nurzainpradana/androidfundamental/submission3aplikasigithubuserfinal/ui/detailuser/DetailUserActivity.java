@@ -1,18 +1,13 @@
 package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
@@ -122,23 +117,6 @@ public class DetailUserActivity extends AppCompatActivity implements View.OnClic
         Objects.requireNonNull(getSupportActionBar()).setTitle(titleDetail);
 
         btnFavorite.setOnClickListener(this);
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.option_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.setting) {
-            Intent changeLanguageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
-            startActivity(changeLanguageIntent);
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

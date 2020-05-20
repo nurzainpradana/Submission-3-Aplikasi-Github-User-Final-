@@ -19,4 +19,5 @@
     <string name="alarm_message">Ayo temukan pengguna populer di Github!</string>
     <string name="repeat_set_up">Pengingat Dihidupkan</string>
     <string name="repeat_set_down">Pengingat Dimatikan</string>
+    <string name="dummy_language">dummy_language</string>
 </resources>

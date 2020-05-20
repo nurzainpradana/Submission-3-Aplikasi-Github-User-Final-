@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Consumer App</string>
+    <string name="find_user">Cari Username … </string>
+
+    <string name="change_language_settings">Ubah Setelan Bahasa</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="not_found">User Tidak Ditemukan</string>
+    <string name="titleSearch">Aplikasi Pencarian Pengguna Github</string>
+    <string name="titleDetail">Detail Pengguna</string>
+    <string name="addtofavorite">Tambah Ke Favorit</string>
+    <string name="removefromfavorite">Hapus Dari Favorit</string>
+    <string name="success_remove_from_favorite">Berhasil Menghapus dari Favorit</string>
+    <string name="success_add_to_favorite">Sukses Menambahkan ke Favorit</string>
+    <string name="favorite">Favorit</string>
+    <string name="user_favorite">User Favorit</string>
+    <string name="reminder_setting">Atur Pengingat</string>
+    <string name="setting">Pengaturan</string>
+    <string name="alarm_message">Ayo temukan pengguna populer di Github!</string>
+    <string name="repeat_set_up">Pengingat Dihidupkan</string>
+    <string name="repeat_set_down">Pengingat Dimatikan</string>
+    <string name="dummy_language">dummy_language</string>
+</resources>

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Submission 3 Aplikasi Github User Final.iml" filepath="$PROJECT_DIR$/Submission 3 Aplikasi Github User Final.iml" group="Submission 3 Aplikasi Github User Final" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Submission 3 Aplikasi Github User Final/app" />
+      <module fileurl="file://$PROJECT_DIR$/consumerapp/consumerapp.iml" filepath="$PROJECT_DIR$/consumerapp/consumerapp.iml" group="Submission 3 Aplikasi Github User Final/consumerapp" />
     </modules>
   </component>
 </project>

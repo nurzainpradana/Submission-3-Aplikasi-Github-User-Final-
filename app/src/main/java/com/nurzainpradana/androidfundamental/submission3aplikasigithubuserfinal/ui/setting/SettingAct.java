@@ -27,7 +27,9 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
     AlarmReceiver alarmReceiver;
 
     private String PREF_REMINDER = "pref_reminder";
-    private SharedPreferences preferences = getSharedPreferences(PREF_REMINDER, Context.MODE_PRIVATE);
+    boolean reminderSet = false;
+
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +45,14 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
 
         changeLanguage.setOnClickListener(this);
         preferences = getSharedPreferences(PREF_REMINDER, Context.MODE_PRIVATE);
-        boolean reminderSet = preferences.getBoolean(PREF_REMINDER, false);
-        if (reminderSet){
-            switchToggle.setChecked(true);
-        } else {
-            switchToggle.setChecked(false);
+        if (preferences != null) {
+            reminderSet = preferences.getBoolean(PREF_REMINDER, false);
+
+            if (reminderSet){
+                switchToggle.setChecked(true);
+            } else {
+                switchToggle.setChecked(false);
+            }
         }
 
         switchToggle.setOnCheckedChangeListener((buttonView, isChecked) -> {
