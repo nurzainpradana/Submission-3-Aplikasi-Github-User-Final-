@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -61,7 +60,6 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
                 String repeatMessage = getResources().getString(R.string.alarm_message);
                 Context context = getApplicationContext();
                 alarmReceiver.setRepeatingAlarm(context, AlarmReceiver.TITLE, repeatTime, repeatMessage);
-                Toast.makeText(context, repeatMessage, Toast.LENGTH_SHORT).show();
                 saveSetting(true);
             } else {
                 alarmReceiver.cancelAlarm(this);
@@ -87,4 +85,6 @@ public class SettingAct extends AppCompatActivity implements View.OnClickListene
         editor.putBoolean(PREF_REMINDER, reminder_setting);
         editor.apply();
     }
+
+
 }

@@ -2,6 +2,10 @@ package com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,18 +14,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
-
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.detailuser.DetailUserActivity;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.UserAdapter;
-import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.data.User;
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.viewmodel.FollowingViewModel;
-
-import java.util.List;
 
 public class FollowingFragment extends Fragment {
 
@@ -54,7 +51,7 @@ public class FollowingFragment extends Fragment {
         showLoading(false);
         FollowingViewModel followingViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel.class);
 
-        followingViewModel.setListFollowing(username, getContext());
+        followingViewModel.setListFollowing(username);
 
         followingViewModel.getListFollowing().observe(getViewLifecycleOwner(), list -> {
             userAdapter = new UserAdapter();

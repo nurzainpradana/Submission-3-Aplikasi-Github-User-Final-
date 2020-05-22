@@ -10,17 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6723dcb4-da93-41f7-a5dc-c40370480d6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/DetailUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/DetailUserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/searchuser/SearchUserActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/searchuser/SearchUserActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/helper/MappingHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/helper/MappingHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/provider/FavoriteProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/provider/FavoriteProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/FollowingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/FollowingViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/viewmodel/UserViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/data/UserLocal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/fragment/FollowingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/detailuser/fragment/FollowingFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/setting/SettingAct.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/ui/setting/SettingAct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/receiver/AlarmReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/nurzainpradana/androidfundamental/submission3aplikasigithubuserfinal/util/receiver/AlarmReceiver.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,15 +73,18 @@
   </component>
   <component name="ProjectId" id="1bhok8BQRi3Tru3S8UF1TezQA5V" />
   <component name="PropertiesComponent">
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="357659f50804" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-20T04:57:08.408Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/Pixel_3a_XL_API_27 [emulator-5554]/data/data/com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal/databases" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
@@ -106,7 +115,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android App.consumerapp">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />

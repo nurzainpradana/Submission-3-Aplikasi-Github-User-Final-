@@ -17,6 +17,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.R;
+import com.nurzainpradana.androidfundamental.submission3aplikasigithubuserfinal.ui.searchuser.SearchUserActivity;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -64,12 +65,20 @@ public class AlarmReceiver extends BroadcastReceiver {
         String CHANNEL_ID = "Channel_1";
         String CHANNEL_NAME = "AlarmManager channel";
 
+        Intent intent = new Intent(context, SearchUserActivity.class);
+
+        //PendingIntent pendingIntent = TaskStackBuilder.create(context)
+//                .addParentStack(SearchUserActivity.class)
+//                .getPendingIntent(notifId, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+
         NotificationManager notificationManagerCompat = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_github)
                 .setContentTitle(AlarmReceiver.TITLE)
                 .setContentText(message)
+                .setContentIntent(pendingIntent)
                 .setColor(ContextCompat.getColor(context, android.R.color.transparent))
                 .setVibrate(new long[]{1000, 1000, 1000, 10000, 1000})
                 .setSound(alarmSound);

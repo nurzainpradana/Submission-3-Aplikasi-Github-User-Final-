@@ -42,7 +42,9 @@
 
         <activity android:name=".ui.favorite.FavoriteActivity" />
         <activity android:name=".ui.detailuser.DetailUserActivity" />
-        <activity android:name=".ui.searchuser.SearchUserActivity">
+        <activity
+            android:name=".ui.searchuser.SearchUserActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
